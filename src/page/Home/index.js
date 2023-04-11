@@ -13,14 +13,14 @@ function Home() {
           </span>
         </div>
         <div className="flex justify-end -mt-[280px]">
-          <img src="img/Group.png" />
+          <img src="img/Group.png" alt="" />
         </div>
       </div>
       <div className=" -mt-52 ">
-        <img src="img/l.png" />
+        <img src="img/l.png" alt="" />
       </div>
       <div className="flex justify-end  -mt-52 ">
-        <img src="img/r.png" />
+        <img src="img/r.png" alt="" />
       </div>
       <div className="text-center -mt-[450PX]">
         <p className="text-6xl font-bold ">Most Popular PDF Tools</p>
