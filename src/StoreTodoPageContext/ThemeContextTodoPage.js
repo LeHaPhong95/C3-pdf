@@ -29,17 +29,19 @@ function ThemeproviderTodoPage({ children }) {
 
     // const isCheckText = todos.some((item) => item.text.includes(textInput))
 
-    if (checkText === 0) {
-      alert(textInput === '' ? 'add task' : 'had task in list')
-      return
-    }
+    // if (checkText === -1) {
+    //   alert(textInput === '' ? 'add task' : 'had task in list')
+    //   return
+    // }
 
-    if (textInput) {
+    if (textInput && checkText === -1) {
       onAddTodo({
         isComplete: false,
         text: textInput,
       })
       setTextInput('')
+    } else {
+      alert(textInput === '' ? 'add task' : 'had task in list')
     }
   }
 
