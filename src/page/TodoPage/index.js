@@ -17,7 +17,7 @@ function TodoPage() {
     setTodos(newTodos)
   }
 
-  const checkAll = (value) => {
+  const onCheckedAll = (value) => {
     console.log('value', value)
     setTodos(
       todos.map((item) => {
@@ -37,7 +37,6 @@ function TodoPage() {
       return todos.filter((item) => item.isComplete)
     }
   }, [typeFilter, todos])
-  console.log('arrayRender:', arrayRender)
 
   const clearComplete = () => {
     const newTodo = todos.filter((item) => !item.isComplete)
@@ -65,10 +64,15 @@ function TodoPage() {
 
   const totalTodo = todos.filter((todo) => !todo.isComplete)
   const isClearComplete = todos.filter((item) => item.isComplete)
+
   return (
     <div className="mt-10 mb-96">
       <h1 className="opacity-60 text-red-600 text-7xl text-center ">Todo</h1>
-      <TodoForm onAddTodo={onAddTodo} todos={todos} checkAll={checkAll} />
+      <TodoForm
+        onAddTodo={onAddTodo}
+        todos={todos}
+        onCheckedAll={onCheckedAll}
+      />
       {arrayRender.length > 0 && (
         <>
           <TodoList
@@ -83,6 +87,7 @@ function TodoPage() {
           /> */}
         </>
       )}
+
       {todos.length > 0 && (
         <TodoHandle
           active={active}

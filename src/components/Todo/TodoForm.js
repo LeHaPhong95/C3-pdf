@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const TodoForm = ({ onAddTodo, todos, checkAll }) => {
+export const TodoForm = ({ onAddTodo, todos, onCheckedAll }) => {
   const [textInput, setTextInput] = useState('')
 
   const handleAddTodo = (event) => {
@@ -29,7 +29,10 @@ export const TodoForm = ({ onAddTodo, todos, checkAll }) => {
   return (
     <div className="p-5 border-2  w-8/12 m-auto ">
       <form onSubmit={handleAddTodo} className="flex space-x-5 items-center">
-        <input onChange={(e) => checkAll(e.target.checked)} type="checkbox" />
+        <input
+          onChange={(e) => onCheckedAll(e.target.checked)}
+          type="checkbox"
+        />
         <input
           type="text"
           placeholder="New Task"
