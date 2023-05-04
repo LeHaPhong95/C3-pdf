@@ -4,12 +4,18 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProviderFollowHook } from './StoreContexFollowHook/ThemeContext'
+import { ThemeproviderTodoPage } from './StoreTodoPageContext/ThemeContextTodoPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ThemeProviderFollowHook>
+        <ThemeproviderTodoPage>
+          <App />
+        </ThemeproviderTodoPage>
+      </ThemeProviderFollowHook>
     </BrowserRouter>
   </React.StrictMode>,
 )
